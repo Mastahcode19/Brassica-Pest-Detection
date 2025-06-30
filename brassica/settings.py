@@ -23,5 +23,5 @@ DEFAULT_DETECT_IMAGE = IMAGES_DIR / 'hama_label1.jpg'
 UPLOADED_IMAGES_DIR = IMAGES_DIR / 'uploaded'
 
 # Konfigurasi model ML
-MODEL_DIR = ROOT.parent / 'weights'  # Ubah ke ROOT.parent untuk menunjuk ke brassica-pest-detection/weights/
-DETECTION_MODEL = MODEL_DIR / 'best(6).pt'
+MODEL_DIR = ROOT.parent / './brassica/weights'  # Ubah ke ROOT.parent untuk menunjuk ke brassica-pest-detection/weights/
+DETECTION_MODEL = MODEL_DIR / 'best6.pt'
