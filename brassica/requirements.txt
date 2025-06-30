@@ -1,11 +1,11 @@
 aioice==0.10.1
-aiortc==1.13.0
+# aiortc==1.13.0
 altair==5.5.0
 appnope==0.1.4
 asn1crypto==1.5.1
 asttokens==3.0.0
 attrs==25.3.0
-av==14.4.0
+# av==14.4.0
 beautifulsoup4==4.13.4
 blinker==1.9.0
 boto3==1.38.39
@@ -64,7 +64,6 @@ narwhals==1.41.1
 nest-asyncio==1.6.0
 networkx==3.5
 numpy==1.26.4
-opencv-python==4.11.0.86
 opencv-python-headless==4.11.0.86
 packaging==24.2
 pandas==2.3.0
@@ -86,7 +85,7 @@ pydeck==0.9.1
 pyee==13.0.0
 Pygments==2.19.1
 PyJWT==2.10.1
-pylibsrtp==0.12.0
+# pylibsrtp==0.12.0
 pymdown-extensions==10.15
 pymongo==4.13.0
 Pympler==1.1
@@ -109,8 +108,8 @@ semver==3.0.4
 setuptools==80.9.0
 six==1.17.0
 smmap==5.0.2
-snowflake-connector-python==3.15.0
-snowflake-snowpark-python==1.32.0
+# snowflake-connector-python==3.15.0
+# snowflake-snowpark-python==1.32.0
 sortedcontainers==2.4.0
 soupsieve==2.7
 SQLAlchemy==2.0.30
