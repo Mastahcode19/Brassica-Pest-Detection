@@ -1122,35 +1122,29 @@ def halaman_aplikasi():
 
     with st.expander("📦 Status Model", expanded=True):
         model_path = Path(settings.DETECTION_MODEL)
-        st.write(f"Debug: Mencoba memuat model dari: {model_path}")
-        if not model_path.exists():
-            st.error(f"File model tidak ditemukan di: {model_path}")
-            return
         try:
             model = helper.load_model(model_path)
-            st.success("Model berhasil terhubung")
-            gif_path = Path("assets/image/ceklist.gif")
-            if not gif_path.exists():
-                st.warning(f"File GIF tidak ditemukan di: {gif_path}")
-            else:
-                with open(gif_path, "rb") as f:
-                    contents = f.read()
-                data_url = base64.b64encode(contents).decode("utf-8")
-                st.markdown(f"""
+            st.success("Model berhasil terhubung ")
+            gif_path = "./assets/image/ceklist.gif"
+            file_ = open(gif_path, "rb")
+            contents = file_.read()
+            data_url = base64.b64encode(contents).decode("utf-8")
+            file_.close()
+
+            st.markdown(f"""
                 <div style='
-                    display: flex;
-                    margin-top: -82px;
-                    margin-left: 170px;
+                display: flex;
+                margin-top: -82px;
+                margin-left: 170px;
                 '>
-                    <div style='text-align: center;'>
-                        <img src="data:image/gif;base64,{data_url}" width="80">
-                    </div>
-                </div>
-                """, unsafe_allow_html=True)
+            <div style='text-align: center;'>
+            <img src="data:image/gif;base64,{data_url}" width="80">
+            </div>
+            """,
+            unsafe_allow_html=True)
         except Exception as ex:
             st.error(f"Gagal memuat model dari: {model_path}")
-            st.error(f"Detail error: {str(ex)}")
-            return
+            st.error(ex)
 
     st.markdown("<h3 style=\"margin-top: 0; font-family: 'Bodoni', serif;\">📝 Instruksi Deteksi</h3>", unsafe_allow_html=True)
     st.markdown("""
