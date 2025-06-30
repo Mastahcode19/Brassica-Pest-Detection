@@ -460,36 +460,42 @@ def halaman_profil_hama():
     st.markdown("<div class='custom-title'>🐛 Profil Hama Pada Bunga Kol</div>", unsafe_allow_html=True)
     st.info("✨ Halaman ini berisi informasi detail mengenai hama utama, siklus hidup, dan kerusakan yang ditimbulkannya.")
 
-    # --- Tampilkan GIF langsung dari URL ---
-    gif_url_1 = "https://ik.imagekit.io/mastah/ulatanim1.gif?updatedAt=1751273086234"
-    gif_url_2 = "https://ik.imagekit.io/mastah/daunanim.gif?updatedAt=1751273086582"
 
-    # Debug untuk memeriksa apakah URL dapat diakses
-    import requests
-    for url in [gif_url_1, gif_url_2]:
-        try:
-            response = requests.head(url)
-            if response.status_code != 200:
-                st.error(f"Gagal mengakses GIF: {url}. Status code: {response.status_code}")
-        except Exception as e:
-            st.error(f"Gagal memeriksa URL {url}: {str(e)}")
+    gif_path_1 = "https://ik.imagekit.io/mastah/ulatanim1.gif?updatedAt=1751273086234"
+    with open(gif_path_1, "rb") as f:
+        contents_1 = f.read()
+    data_url_1 = base64.b64encode(contents_1).decode("utf-8")
 
-    st.markdown("""
-    <div style='position: relative; width: 100%; text-align: center;'>
-        <div style='
-            display: inline-block;
-            margin: 10px;
-        '>
-            <img src="{}" width="120" alt="Ulat Animation">
-        </div>
-        <div style='
-            display: inline-block;
-            margin: 10px;
-        '>
-            <img src="{}" width="90" alt="Daun Animation">
-        </div>
-    </div>
-    """.format(gif_url_1, gif_url_2), unsafe_allow_html=True)
+    gif_path_2 = "https://ik.imagekit.io/mastah/daunanim.gif?updatedAt=1751273086582"
+    with open(gif_path_2, "rb") as f:
+        contents_2 = f.read()
+    data_url_2 = base64.b64encode(contents_2).decode("utf-8")
+
+# --- Tampilkan Kedua GIF dengan Styling Berbeda ---
+    st.markdown(f"""
+<div style='position: relative; width: 100%;'>
+
+<div style='
+        position: absolute;
+        top: -10px;
+        left: 610px;
+        text-align: center;
+        z-index: 1;
+    '>
+    <img src="data:image/gif;base64,{data_url_1}" width="120">
+</div>
+<div style='
+        position: absolute;
+        top: -10px;
+        left: 830px;
+        text-align: center;
+        z-index: 1;
+    '>
+        <img src="data:image/gif;base64,{data_url_2}" width="90">
+</div>
+
+</div>
+""", unsafe_allow_html=True)
 
     
 # Lalu bungkus tab dan isinya dengan container luar
