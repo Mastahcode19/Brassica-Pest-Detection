@@ -7,7 +7,6 @@ import pytz
 import toml
 import os
 import PIL
-import settings
 import helper
 import requests
 from pymongo import MongoClient
