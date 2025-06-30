@@ -8,6 +8,7 @@ import toml
 import os
 import PIL
 import helper
+import settings
 import requests
 from pymongo import MongoClient
 from datetime import datetime
