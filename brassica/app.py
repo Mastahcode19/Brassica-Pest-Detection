@@ -18,27 +18,29 @@ from streamlit_product_card import product_card
 from pathlib import Path
 
 
-APP_ROOT = Path(__file__).resolve().parent
 # --- Konfigurasi Layout Awal Halaman ---
 st.set_page_config(
     page_title="Brassica - Deteksi Hama Kembang Kol",
-    page_icon=str(APP_ROOT / "assets" / "logo" / "cauli-iconic.png"),
+    page_icon="./assets/logo/cauli-iconic.png",
     layout="wide",
     initial_sidebar_state="collapsed"
 )
 
 # --- Kumpulan Asset Gambar ---
 
-ICON_IMAGE = APP_ROOT / "assets" / "logo" / "cauli-iconic.png"
+ICON_IMAGE = "./assets/logo/cauli-iconic.png"
+
 HOME2_IMAGE = "https://ik.imagekit.io/mastah/cauliflower-2.jpg?updatedAt=1750140626362"
 HOME3_IMAGE = "https://ik.imagekit.io/mastah/ilmiah-kol.jpeg?updatedAt=1750169351840"
-HOME4_IMAGE = APP_ROOT / "assets" / "image" / "grayak.jpg"
-HOME5_IMAGE = APP_ROOT / "assets" / "image" / "grayak1.png"
+HOME4_IMAGE = "./assets/image/grayak.jpg"
+HOME5_IMAGE = "./assets/image/grayak1.png"
 HOME6_IMAGE = "https://ik.imagekit.io/mastah/ulat2.jpeg?updatedAt=1750214362020"
 HOME7_IMAGE = "https://ik.imagekit.io/mastah/ulat4.jpeg?updatedAt=1750218504224"
 HOME8_IMAGE = "https://ik.imagekit.io/mastah/BlurObject.png?updatedAt=1750663450502"
 HOME9_IMAGE = "https://ik.imagekit.io/mastah/ClearObject.png?updatedAt=1750663451179"
 BRASSICA = "https://ik.imagekit.io/mastah/brassica_logo.png?updatedAt=1749799795443"
+
+
 
 # --- Header Navigasi ---
 def header():
@@ -158,10 +160,10 @@ def halaman_utama():
         """, unsafe_allow_html=True)
     col1, col2 = st.columns(2)
     with col1:
-        st.image(str(HOME4_IMAGE), caption="Gambar Asli", use_container_width=True)
+        st.image(HOME4_IMAGE, caption="Gambar Asli", use_container_width=True)
         
     with col2:
-        st.image(str(HOME5_IMAGE), caption="Gambar Sesudah Terdeteksi Hama", use_container_width=True)
+        st.image(HOME5_IMAGE, caption="Gambar Sesudah Terdeteksi Hama", use_container_width=True)
 
     st.markdown("""
 <hr style="height:4px;border:none;color:#28a745;background-color:#97a970;" />
@@ -459,12 +461,12 @@ def halaman_profil_hama():
     st.info("✨ Halaman ini berisi informasi detail mengenai hama utama, siklus hidup, dan kerusakan yang ditimbulkannya.")
 
 
-    gif_path_1 = APP_ROOT / "assets" / "gif" / "ulatanim1.gif"
+    gif_path_1 = "./assets/gif/ulatanim1.gif"
     with open(gif_path_1, "rb") as f:
         contents_1 = f.read()
     data_url_1 = base64.b64encode(contents_1).decode("utf-8")
 
-    gif_path_2 = APP_ROOT / "assets" / "gif" / "daunanim.gif"
+    gif_path_2 = "./assets/gif/daunanim.gif"
     with open(gif_path_2, "rb") as f:
         contents_2 = f.read()
     data_url_2 = base64.b64encode(contents_2).decode("utf-8")
@@ -1108,7 +1110,7 @@ def halaman_aplikasi():
         try:
             model = helper.load_model(model_path)
             st.success("Model berhasil terhubung ")
-            gif_path = APP_ROOT / "assets" / "image" / "ceklist.gif"
+            gif_path = "./assets/image/ceklist.gif"
             file_ = open(gif_path, "rb")
             contents = file_.read()
             data_url = base64.b64encode(contents).decode("utf-8")
@@ -1331,7 +1333,7 @@ def footer():
 
 # --- Main App ---
 def main():
-    load_css(str(APP_ROOT / "assets" / "css" / "style.css"))
+    load_css("assets/css/style.css")
     selected_page = header()
     # Menentukan halaman yang akan ditampilkan
     if selected_page == "Beranda":
@@ -1348,4 +1350,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
