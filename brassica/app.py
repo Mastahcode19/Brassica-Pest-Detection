@@ -460,6 +460,34 @@ def halaman_profil_hama():
     st.markdown("<div class='custom-title'>🐛 Profil Hama Pada Bunga Kol</div>", unsafe_allow_html=True)
     st.info("✨ Halaman ini berisi informasi detail mengenai hama utama, siklus hidup, dan kerusakan yang ditimbulkannya.")
 
+    gif_url_1 = "https://ik.imagekit.io/mastah/ulatanim1.gif?updatedAt=1751273086234"
+    gif_url_2 = "https://ik.imagekit.io/mastah/daunanim.gif?updatedAt=1751273086582"
+
+    st.markdown(f"""
+<div style='position: relative; width: 100%;'>
+
+            <div style='
+                position: absolute;
+                top: -10px;
+                left: 610px;
+                text-align: center;
+                z-index: 1;
+            '>
+                <img src="{gif_url_1}" width="120">
+</div>
+
+            <div style='
+                position: absolute;
+                top: -10px;
+                left: 830px;
+                text-align: center;
+                z-index: 1;
+            '>
+                <img src="{gif_url_2}" width="90">
+            </div>
+
+</div>
+    """, unsafe_allow_html=True)
 
     
 
