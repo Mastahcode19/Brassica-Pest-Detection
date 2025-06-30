@@ -30,7 +30,7 @@ st.set_page_config(
 # --- Kumpulan Asset Gambar ---
 
 ICON_IMAGE = "./assets/logo/cauli-iconic.png"
-HOME1_MOBILE_IMAGE = "./assets/image/cauliflower-2.jpg"  # Versi mobile
+
 HOME2_IMAGE = "https://ik.imagekit.io/mastah/cauliflower-2.jpg?updatedAt=1750140626362"
 HOME3_IMAGE = "https://ik.imagekit.io/mastah/ilmiah-kol.jpeg?updatedAt=1750169351840"
 HOME4_IMAGE = "./assets/image/grayak.jpg"
@@ -40,14 +40,6 @@ HOME7_IMAGE = "https://ik.imagekit.io/mastah/ulat4.jpeg?updatedAt=1750218504224"
 HOME8_IMAGE = "https://ik.imagekit.io/mastah/BlurObject.png?updatedAt=1750663450502"
 HOME9_IMAGE = "https://ik.imagekit.io/mastah/ClearObject.png?updatedAt=1750663451179"
 BRASSICA = "https://ik.imagekit.io/mastah/brassica_logo.png?updatedAt=1749799795443"
-
-# --- Agar Gambar Dapat Dibaca Oleh Streamlit --- 
-def get_base64_image(path):
-    with open(path, "rb") as img_file:
-        return base64.b64encode(img_file.read()).decode()
-
-# Hasil base64
-img_base64_mobile = get_base64_image(HOME1_MOBILE_IMAGE)
 
 # --- Header Navigasi ---
 def header():
