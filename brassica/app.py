@@ -28,7 +28,7 @@ st.set_page_config(
 )
 
 # --- Kumpulan Asset Gambar ---
-LOGO_ICON = "./assets/logo/brassica-logo.png"
+
 ICON_IMAGE = "./assets/logo/cauli-iconic.png"
 HOME1_MOBILE_IMAGE = "./assets/image/cauliflower-2.jpg"  # Versi mobile
 HOME2_IMAGE = "https://ik.imagekit.io/mastah/cauliflower-2.jpg?updatedAt=1750140626362"
@@ -47,7 +47,6 @@ def get_base64_image(path):
         return base64.b64encode(img_file.read()).decode()
 
 # Hasil base64
-logo_base64 = get_base64_image(LOGO_ICON)
 img_base64_mobile = get_base64_image(HOME1_MOBILE_IMAGE)
 
 # --- Header Navigasi ---
