@@ -464,30 +464,32 @@ def halaman_profil_hama():
     gif_url_1 = "https://ik.imagekit.io/mastah/ulatanim1.gif?updatedAt=1751273086234"
     gif_url_2 = "https://ik.imagekit.io/mastah/daunanim.gif?updatedAt=1751273086582"
 
-    st.markdown(f"""
-<div style='position: relative; width: 100%;'>
+    # Debug untuk memeriksa apakah URL dapat diakses
+    import requests
+    for url in [gif_url_1, gif_url_2]:
+        try:
+            response = requests.head(url)
+            if response.status_code != 200:
+                st.error(f"Gagal mengakses GIF: {url}. Status code: {response.status_code}")
+        except Exception as e:
+            st.error(f"Gagal memeriksa URL {url}: {str(e)}")
 
-    <div style='
-                position: absolute;
-                top: -10px;
-                left: 610px;
-                text-align: center;
-                z-index: 1;
-            '>
-                <img src="{gif_url_1}" width="120">
+    st.markdown("""
+    <div style='position: relative; width: 100%; text-align: center;'>
+        <div style='
+            display: inline-block;
+            margin: 10px;
+        '>
+            <img src="{}" width="120" alt="Ulat Animation">
+        </div>
+        <div style='
+            display: inline-block;
+            margin: 10px;
+        '>
+            <img src="{}" width="90" alt="Daun Animation">
+        </div>
     </div>
-
-    <div style='
-                position: absolute;
-                top: -10px;
-                left: 830px;
-                text-align: center;
-                z-index: 1;
-            '>
-                <img src="{gif_url_2}" width="90">
-    </div>
-</div>
-    """, unsafe_allow_html=True)
+    """.format(gif_url_1, gif_url_2), unsafe_allow_html=True)
 
     
 # Lalu bungkus tab dan isinya dengan container luar
