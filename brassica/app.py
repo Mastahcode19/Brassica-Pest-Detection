@@ -1124,19 +1124,18 @@ def halaman_aplikasi():
 
     with st.expander("📦 Status Model", expanded=True):
         model_path = Path(settings.DETECTION_MODEL)
-        st.write(f"Debug: Mencoba memuat model dari: {model_path}")
         if not model_path.exists():
             st.error(f"File model tidak ditemukan di: {model_path}")
             return
         try:
             model = helper.load_model(model_path)
             st.success("Model berhasil terhubung")
-            gif_path = Path(__file__).parent.parent / "assets" / "image" / "ceklist.gif"
-            if not gif_path.exists():
-                st.warning(f"File GIF tidak ditemukan di: {gif_path}")
-            else:
-                with open(gif_path, "rb") as f:
-                    contents = f.read()
+            # GIF dari URL eksternal
+            gif_url = "https://ik.imagekit.io/mastah/ceklist.gif?updatedAt=1751273086075"
+            try:
+                response = requests.get(gif_url, stream=True)
+                response.raise_for_status()  # Memeriksa apakah request berhasil
+                contents = response.content
                 data_url = base64.b64encode(contents).decode("utf-8")
                 st.markdown(f"""
                 <div style='
@@ -1149,6 +1148,8 @@ def halaman_aplikasi():
                     </div>
                 </div>
                 """, unsafe_allow_html=True)
+            except Exception as e:
+                st.warning(f"Gagal memuat GIF dari: {gif_url}. Error: {str(e)}")
         except Exception as ex:
             st.error(f"Gagal memuat model dari: {model_path}")
             st.error(f"Detail error: {str(ex)}")
