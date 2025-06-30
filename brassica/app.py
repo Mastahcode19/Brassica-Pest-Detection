@@ -1123,29 +1123,41 @@ def halaman_aplikasi():
 
     with st.expander("📦 Status Model", expanded=True):
         model_path = Path(settings.DETECTION_MODEL)
+        st.write(f"Debug: Mencoba memuat model dari: {model_path}")
+        st.write(f"Debug: Direktori kerja saat ini: {os.getcwd()}")
+        st.write(f"Debug: Apakah file model ada? {model_path.exists()}")
+        if not model_path.exists():
+            st.error(f"File model tidak ditemukan di: {model_path}")
+            st.error("Pastikan file 'best6.pt' ada di direktori 'brassica/weights/' di repositori.")
+            return
         try:
             model = helper.load_model(model_path)
             st.success("Model berhasil terhubung ")
-            gif_path = "./assets/image/ceklist.gif"
-            file_ = open(gif_path, "rb")
-            contents = file_.read()
-            data_url = base64.b64encode(contents).decode("utf-8")
-            file_.close()
+            gif_path = Path("assets/image/ceklist.gif")
+            if not gif_path.exists():
+                st.warning(f"File GIF tidak ditemukan di: {gif_path}")
+            else:
+                file_ = open(gif_path, "rb")
+                contents = file_.read()
+                data_url = base64.b64encode(contents).decode("utf-8")
+                file_.close()
 
-            st.markdown(f"""
-                <div style='
-                display: flex;
-                margin-top: -82px;
-                margin-left: 170px;
-                '>
-            <div style='text-align: center;'>
-            <img src="data:image/gif;base64,{data_url}" width="80">
-            </div>
-            """,
-            unsafe_allow_html=True)
+                st.markdown(f"""
+                    <div style='
+                    display: flex;
+                    margin-top: -82px;
+                    margin-left: 170px;
+                    '>
+                <div style='text-align: center;'>
+                <img src="data:image/gif;base64,{data_url}" width="80">
+                </div>
+                </div>
+                """,
+                unsafe_allow_html=True)
         except Exception as ex:
             st.error(f"Gagal memuat model dari: {model_path}")
-            st.error(ex)
+            st.error(f"Detail error: {str(ex)}")
+            return
 
     st.markdown("<h3 style=\"margin-top: 0; font-family: 'Bodoni', serif;\">📝 Instruksi Deteksi</h3>", unsafe_allow_html=True)
     st.markdown("""
