@@ -1349,4 +1349,4 @@ def main():
         halaman_riwayat()
 
 if __name__ == "__main__":
-    main()
+        main()
