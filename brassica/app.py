@@ -491,7 +491,7 @@ def halaman_profil_hama():
             <div style='
                 position: absolute;
                 top: -10px;
-                left: 610px;
+                left: 410px;
                 text-align: center;
                 z-index: 1;
             '>
@@ -500,7 +500,7 @@ def halaman_profil_hama():
             <div style='
                 position: absolute;
                 top: -10px;
-                left: 730px;
+                left: 530px;
                 text-align: center;
                 z-index: 1;
             '>
