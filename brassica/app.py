@@ -22,7 +22,7 @@ from pathlib import Path
 # --- Konfigurasi Layout Awal Halaman ---
 st.set_page_config(
     page_title="Brassica - Deteksi Hama Kembang Kol",
-    page_icon="./assets/logo/cauli-iconic.png",
+    page_icon="https://ik.imagekit.io/mastah/cauli-iconic.png?updatedAt=1751284403292",
     layout="wide",
     initial_sidebar_state="collapsed"
 )
