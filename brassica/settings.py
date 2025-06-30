@@ -12,16 +12,6 @@ if ROOT not in sys.path:
 # Ubah path menjadi relatif terhadap working directory saat ini
 ROOT = ROOT.relative_to(Path.cwd())
 
-# Definisi sumber
-IMAGE = 'Image'
-SOURCES_LIST = [IMAGE]
-
-# Konfigurasi gambar
-IMAGES_DIR = ROOT / 'images'
-DEFAULT_IMAGE = IMAGES_DIR / 'hamanon_label.jpg'
-DEFAULT_DETECT_IMAGE = IMAGES_DIR / 'hama_label1.jpg'
-UPLOADED_IMAGES_DIR = IMAGES_DIR / 'uploaded'
-
 # Konfigurasi model ML
 MODEL_DIR = ROOT / 'weights'
 DETECTION_MODEL = MODEL_DIR / 'best(6).pt'
