@@ -467,7 +467,7 @@ def halaman_profil_hama():
     st.markdown(f"""
 <div style='position: relative; width: 100%;'>
 
-<div style='
+    <div style='
                 position: absolute;
                 top: -10px;
                 left: 610px;
@@ -475,9 +475,9 @@ def halaman_profil_hama():
                 z-index: 1;
             '>
                 <img src="{gif_url_1}" width="120">
-</div>
+    </div>
 
-<div style='
+    <div style='
                 position: absolute;
                 top: -10px;
                 left: 830px;
@@ -485,7 +485,7 @@ def halaman_profil_hama():
                 z-index: 1;
             '>
                 <img src="{gif_url_2}" width="90">
-</div>
+    </div>
 </div>
     """, unsafe_allow_html=True)
 
