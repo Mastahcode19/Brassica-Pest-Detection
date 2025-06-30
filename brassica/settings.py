@@ -24,4 +24,4 @@ UPLOADED_IMAGES_DIR = IMAGES_DIR / 'uploaded'
 
     # Konfigurasi model ML
 MODEL_DIR = ROOT / 'weights'
-DETECTION_MODEL = MODEL_DIR / 'best6.pt'  # Pastikan nama file sesuai
+DETECTION_MODEL = MODEL_DIR / 'best(6).pt'  # Pastikan nama file sesuai
