@@ -1098,6 +1098,7 @@ def halaman_panduan():
     
 
 # --- KONEKSI KE MONGODB ---
+@st.cache_resource
 def connect_mongo():
     try:
         # Ambil dari secrets.toml
