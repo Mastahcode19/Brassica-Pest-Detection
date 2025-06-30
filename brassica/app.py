@@ -1122,21 +1122,30 @@ def halaman_aplikasi():
     st.markdown("<div style='margin-bottom: 25px;'></div>", unsafe_allow_html=True)
 
     with st.expander("📦 Status Model", expanded=True):
-        MODEL_PATH = "./weights/best6.pt"
-        def load_model():
-            if os.path.exists(MODEL_PATH):
-                try:
-                    model = YOLO(MODEL_PATH)
-                    st.success("✅ Model berhasil terhubung.")
-                    return model
-                except Exception as e:
-                    st.error(f"❌ Gagal memuat model: {e}")
-                    return None
-            else:
-                st.error(f"❌ File model tidak ditemukan di path: {MODEL_PATH}")
-                return None
-            # Contoh pemanggilan fungsi load_model
-        model = load_model()
+        model_path = Path(settings.DETECTION_MODEL)
+        try:
+            model = helper.load_model(model_path)
+            st.success("Model berhasil terhubung ")
+            gif_path = "./assets/image/ceklist.gif"
+            file_ = open(gif_path, "rb")
+            contents = file_.read()
+            data_url = base64.b64encode(contents).decode("utf-8")
+            file_.close()
+
+            st.markdown(f"""
+                <div style='
+                display: flex;
+                margin-top: -82px;
+                margin-left: 170px;
+                '>
+            <div style='text-align: center;'>
+            <img src="data:image/gif;base64,{data_url}" width="80">
+            </div>
+            """,
+            unsafe_allow_html=True)
+        except Exception as ex:
+            st.error(f"Gagal memuat model dari: {model_path}")
+            st.error(ex)
 
     st.markdown("<h3 style=\"margin-top: 0; font-family: 'Bodoni', serif;\">📝 Instruksi Deteksi</h3>", unsafe_allow_html=True)
     st.markdown("""
