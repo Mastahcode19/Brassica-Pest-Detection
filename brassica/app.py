@@ -1126,18 +1126,17 @@ def halaman_aplikasi():
         def load_model():
             if os.path.exists(MODEL_PATH):
                 try:
-                    model = YOLO(MODEL_PATH)
-                    st.success("✅ Model berhasil terhubung.")
-                    return model
+                model = YOLO(MODEL_PATH)
+                t.success("✅ Model berhasil terhubung.")
+                return model
                 except Exception as e:
-                    st.error(f"❌ Gagal memuat model: {e}")
-                    return None
+                st.error(f"❌ Gagal memuat model: {e}")
+                return None
             else:
                 st.error(f"❌ File model tidak ditemukan di path: {MODEL_PATH}")
                 return None
-
             # Contoh pemanggilan fungsi load_model
-            model = load_model()
+        model = load_model()
 
     st.markdown("<h3 style=\"margin-top: 0; font-family: 'Bodoni', serif;\">📝 Instruksi Deteksi</h3>", unsafe_allow_html=True)
     st.markdown("""
