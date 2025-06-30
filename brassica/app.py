@@ -10,7 +10,6 @@ import PIL
 import settings
 import helper
 import requests
-from streamlit_lottie import st_lottie
 from pymongo import MongoClient
 from datetime import datetime
 from streamlit_option_menu import option_menu
