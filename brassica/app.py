@@ -1122,7 +1122,7 @@ def halaman_aplikasi():
     st.markdown("<div style='margin-bottom: 25px;'></div>", unsafe_allow_html=True)
 
     with st.expander("📦 Status Model", expanded=True):
-        MODEL_PATH = "weights/best(6).pt"
+        MODEL_PATH = "./weights/best6.pt"
         def load_model():
             if os.path.exists(MODEL_PATH):
                 try:
