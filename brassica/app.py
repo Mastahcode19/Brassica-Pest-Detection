@@ -1109,7 +1109,7 @@ def halaman_aplikasi():
         try:
             model = helper.load_model(model_path)
             st.success("Model berhasil terhubung ")
-            gif_path = "./assets/image/ceklist.gif"
+            gif_path = "./assets/gif/ceklist.gif"
             file_ = open(gif_path, "rb")
             contents = file_.read()
             data_url = base64.b64encode(contents).decode("utf-8")
