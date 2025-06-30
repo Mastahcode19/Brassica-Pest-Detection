@@ -460,41 +460,55 @@ def halaman_profil_hama():
     st.markdown("<div class='custom-title'>🐛 Profil Hama Pada Bunga Kol</div>", unsafe_allow_html=True)
     st.info("✨ Halaman ini berisi informasi detail mengenai hama utama, siklus hidup, dan kerusakan yang ditimbulkannya.")
 
-    gif_path_1 = "https://ik.imagekit.io/mastah/ulatanim1.gif?updatedAt=1751273086234"
-    with open(gif_path_1, "rb") as f:
-        contents_1 = f.read()
-    data_url_1 = base64.b64encode(contents_1).decode("utf-8")
+    gif_url_1 = "https://ik.imagekit.io/mastah/ulatanim1.gif?updatedAt=1751273086234"
+    gif_url_2 = "https://ik.imagekit.io/mastah/daunanim.gif?updatedAt=1751273086582"
 
-    gif_path_2 = "https://ik.imagekit.io/mastah/daunanim.gif?updatedAt=1751273086582"
-    with open(gif_path_2, "rb") as f:
-        contents_2 = f.read()
-    data_url_2 = base64.b64encode(contents_2).decode("utf-8")
+    # Ambil dan konversi GIF 1
+    try:
+        response_1 = requests.get(gif_url_1, stream=True)
+        response_1.raise_for_status()  # Memeriksa apakah request berhasil
+        contents_1 = response_1.content
+        data_url_1 = base64.b64encode(contents_1).decode("utf-8")
+    except Exception as e:
+        st.error(f"Gagal memuat GIF dari: {gif_url_1}. Error: {str(e)}")
+        data_url_1 = None
 
-# --- Tampilkan Kedua GIF dengan Styling Berbeda ---
-    st.markdown(f"""
-<div style='position: relative; width: 100%;'>
+    # Ambil dan konversi GIF 2
+    try:
+        response_2 = requests.get(gif_url_2, stream=True)
+        response_2.raise_for_status()
+        contents_2 = response_2.content
+        data_url_2 = base64.b64encode(contents_2).decode("utf-8")
+    except Exception as e:
+        st.error(f"Gagal memuat GIF dari: {gif_url_2}. Error: {str(e)}")
+        data_url_2 = None
 
-<div style='
-        position: absolute;
-        top: -10px;
-        left: 610px;
-        text-align: center;
-        z-index: 1;
-    '>
-    <img src="data:image/gif;base64,{data_url_1}" width="120">
-</div>
-<div style='
-        position: absolute;
-        top: -10px;
-        left: 830px;
-        text-align: center;
-        z-index: 1;
-    '>
-        <img src="data:image/gif;base64,{data_url_2}" width="90">
-</div>
-
-</div>
-""", unsafe_allow_html=True)
+    # --- Tampilkan GIF jika berhasil dimuat ---
+    if data_url_1 and data_url_2:
+        st.markdown(f"""
+        <div style='position: relative; width: 100%;'>
+            <div style='
+                position: absolute;
+                top: -10px;
+                left: 610px;
+                text-align: center;
+                z-index: 1;
+            '>
+                <img src="data:image/gif;base64,{data_url_1}" width="120" alt="Ulat Animation">
+            </div>
+            <div style='
+                position: absolute;
+                top: -10px;
+                left: 830px;
+                text-align: center;
+                z-index: 1;
+            '>
+                <img src="data:image/gif;base64,{data_url_2}" width="90" alt="Daun Animation">
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+    else:
+        st.warning("Salah satu atau kedua GIF gagal dimuat. Periksa URL atau koneksi internet.")
 
     
 
