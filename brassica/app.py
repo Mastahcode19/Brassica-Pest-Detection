@@ -1332,7 +1332,7 @@ def footer():
 
 # --- Main App ---
 def main():
-    load_css("./assets/css/style.css")
+    load_css("assets/css/style.css")
     selected_page = header()
     # Menentukan halaman yang akan ditampilkan
     if selected_page == "Beranda":
