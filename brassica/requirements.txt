@@ -7,3 +7,6 @@ streamlit-option-menu==0.3.13
 streamlit-product-card==1.0.0
 pandas==2.3.0
 pymongo==4.13.0
+ultralytics==8.3.152
+opencv-python-headless==4.11.0.86
+torch==2.7.1
