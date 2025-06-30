@@ -1136,8 +1136,8 @@ def halaman_aplikasi():
                 st.error(f"❌ File model tidak ditemukan di path: {MODEL_PATH}")
                 return None
 
-# Contoh pemanggilan fungsi load_model
-model = load_model()
+            # Contoh pemanggilan fungsi load_model
+            model = load_model()
 
     st.markdown("<h3 style=\"margin-top: 0; font-family: 'Bodoni', serif;\">📝 Instruksi Deteksi</h3>", unsafe_allow_html=True)
     st.markdown("""
