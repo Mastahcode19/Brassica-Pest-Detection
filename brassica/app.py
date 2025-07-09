@@ -154,8 +154,9 @@ def halaman_utama():
     st.markdown("""
         <div class="cauli-desc">
         Aplikasi ini memanfaatkan <strong>kecerdasan buatan (AI)</strong> untuk menganalisis gambar kembang kol 
-        dan mendeteksi keberadaan hama secara otomatis. Dengan menggunakan <strong>algoritma YOLO</strong>, 
-        sebuah model deteksi objek yang sudah dilatih akan memproses gambar dan memberikan kotak pembatas (bounding box) di sekitar hama yang terdeteksi secara tepat dan akurat.
+        dan mendeteksi keberadaan hama secara otomatis. Dengan menggunakan <strong>algoritma YOLOv11</strong>, 
+        yaitu pengembangan dari arsitektur YOLO sebelumnya dengan peningkatan pada kecepatan inferensi, efisiensi penggunaan memori, serta akurasi dalam mendeteksi objek berukuran kecil hingga sedang.
+        Model deteksi objek yang telah dilatih akan memproses gambar dan memberikan kotak pembatas (bounding box) di sekitar hama yang terdeteksi secara tepat dan akurat.
         <br><br>Lihat perbedaan antara gambar sebelum dan sesudah diproses oleh sistem deteksi hama untuk mengetahui bagaimana objek teridentifikasi secara otomatis<br><br>
     </div>
         """, unsafe_allow_html=True)
