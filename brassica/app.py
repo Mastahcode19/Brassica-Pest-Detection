@@ -120,7 +120,7 @@ def halaman_utama():
     """, unsafe_allow_html=True)
 
     # --- Fitur Deteksi Hama --- 
-    st.markdown("<div class='custom-title'>🌿 Bunga Kol ( <i>Brassica oleracea</i> L. )</div>", unsafe_allow_html=True)
+    st.markdown("<div class='custom-title'>🌿 Bunga Kol ( <i>Brassica oleracea</i> )</div>", unsafe_allow_html=True)
 
     col1_img, col2_img = st.columns(2)
     with col1_img:
