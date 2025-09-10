@@ -1092,7 +1092,7 @@ def halaman_panduan():
     <div class="langkah-card" style="background-color:#e8f5e9; border-left: 6px solid #66bb6a;">
         <div class="langkah-number">🎉 Selamat Mencoba!</div>
         <div class="langkah-desc">
-            Jika kamu sudah mencoba semua fitur, silakan eksplorasi submenu lain seperti Riwayat, Profil Hama, dan Statistik.
+            Jika kamu sudah mencoba semua fitur, silakan eksplorasi submenu lain seperti Deteksi Hama, Profil Hama, dan Hasil Riwayat.
         </div>
     </div>
     """, unsafe_allow_html=True)
