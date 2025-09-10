@@ -32,9 +32,9 @@ st.set_page_config(
 ICON_IMAGE = "./assets/logo/cauli-iconic.png"
 
 HOME2_IMAGE = "https://ik.imagekit.io/mastah/cauliflower-2.jpg?updatedAt=1750140626362"
-HOME3_IMAGE = "https://ik.imagekit.io/mastah/ilmiah-kol.jpeg?updatedAt=1750169351840"
+HOME3_IMAGE = "https://ik.imagekit.io/mastah/klasifikasi-bunga-kol.png?updatedAt=1757495626483"
 HOME4_IMAGE = "https://ik.imagekit.io/mastah/grayak.jpg?updatedAt=1751268506864"
-HOME5_IMAGE = "https://ik.imagekit.io/mastah/grayakhd.PNG?updatedAt=1751269410373"
+HOME5_IMAGE = "https://ik.imagekit.io/mastah/grayak1-hasil.PNG?updatedAt=1757495527214"
 HOME6_IMAGE = "https://ik.imagekit.io/mastah/ulat2.jpeg?updatedAt=1750214362020"
 HOME7_IMAGE = "https://ik.imagekit.io/mastah/ulat4.jpeg?updatedAt=1750218504224"
 HOME8_IMAGE = "https://ik.imagekit.io/mastah/BlurObject.png?updatedAt=1750663450502"
