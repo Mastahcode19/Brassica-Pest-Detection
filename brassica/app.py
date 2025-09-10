@@ -34,7 +34,7 @@ ICON_IMAGE = "./assets/logo/cauli-iconic.png"
 HOME2_IMAGE = "https://ik.imagekit.io/mastah/cauliflower-2.jpg?updatedAt=1750140626362"
 HOME3_IMAGE = "https://ik.imagekit.io/mastah/klasifikasi-bunga-kol.png?updatedAt=1757495626483"
 HOME4_IMAGE = "https://ik.imagekit.io/mastah/grayak.jpg?updatedAt=1751268506864"
-HOME5_IMAGE = "https://ik.imagekit.io/mastah/grayak1-hasil.PNG?updatedAt=1757495527214"
+HOME5_IMAGE = "https://ik.imagekit.io/mastah/grayak-deteksi.jpg?updatedAt=1757496898189"
 HOME6_IMAGE = "https://ik.imagekit.io/mastah/ulat2.jpeg?updatedAt=1750214362020"
 HOME7_IMAGE = "https://ik.imagekit.io/mastah/ulat4.jpeg?updatedAt=1750218504224"
 HOME8_IMAGE = "https://ik.imagekit.io/mastah/BlurObject.png?updatedAt=1750663450502"
@@ -110,7 +110,7 @@ def halaman_utama():
     st.markdown("""
     <div class="cauli-desc" style='font-size: 18px; line-height: 1.7;'>
     <strong>Brassica</strong> adalah solusi cerdas berbasis <em>kecerdasan buatan (AI)</em> yang dirancang untuk membantu petani dan masyarakat umum dalam mengidentifikasikan berbagai jenis hama yang paling sering menyerang tanaman bunga kol.
-    Cukup unggah gambar hama pada bunga kol, dan Brassica akan mengidentifikasi jenis hama tersebut secara <strong>realtime</strong> dan <strong>akurat</strong>.
+    Cukup unggah gambar hama pada bunga kol, dan Brassica akan mengidentifikasi jenis hama tersebut secara <strong>tepat</strong> dan <strong>akurat</strong>.
     Sekaligus memberi tips cara pengendalian untuk masing-masing hama. 
     </div>
     """, unsafe_allow_html=True)
@@ -126,7 +126,7 @@ def halaman_utama():
     with col1_img:
         st.markdown("""
         <div class="cauli-desc">
-        <strong>Bunga kol</strong> atau akrab sering disebut sebagai kembang kol ini dikenal secara ilmiah sebagai <i>Brassica oleracea var. botrytis</i> L., merupakan salah satu jenis sayuran dari keluarga kubis-kubisan (<i>Brassicaceae</i>) yang populer dan banyak dikonsumsi di berbagai belahan dunia.
+        <strong>Bunga kol</strong> atau akrab sering disebut sebagai kembang kol ini dikenal secara ilmiah sebagai <i>Brassica oleracea var. botrytis</i>., merupakan salah satu jenis sayuran dari keluarga kubis-kubisan (<i>Brassicaceae</i>) yang populer dan banyak dikonsumsi di berbagai belahan dunia.
         <br>
         Bagian yang dimanfaatkan dari tanaman ini adalah bunga mudanya yang kaya akan nutrisi, seperti vitamin C, vitamin K, folat, serta antioksidan alami. Tidak hanya bernilai gizi tinggi, kembang kol juga memiliki nilai ekonomi penting bagi petani hortikultura.<br><br> 
     </div>
